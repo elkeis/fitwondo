@@ -1,0 +1,24 @@
+<div class="start-game-page" ng-class="$ctrl.profile.championId">
+    <page-header on-back="$ctrl.back()"></page-header>
+
+    <div class="bubble">
+        <h2 ng-if="$ctrl.profile.championId === 'liver'">Mr. Liver</h2>
+        <h2 ng-if="$ctrl.profile.championId === 'pancreas'">Mrs. Pancreas</h2>
+        <h2 ng-if="$ctrl.profile.championId === 'kidney'">Mr. Kidney</h2>
+        <h2 ng-if="$ctrl.profile.championId === 'stomach'">Mrs. Stomach</h2>
+
+        <p>You will eat my rear rockets and like it! Ohhhh yeahhh!</p>
+
+        <img ng-src="{{ ::$ctrl.lineUrl }}"/>
+
+        <champion champion-id="$ctrl.profile.championId"></champion>
+
+        <button
+                class="ff-button"
+                ng-click="$ctrl.startGame()"
+                ng-disabled="$ctrl.disabled"
+        >
+            start game
+        </button>
+    </div>
+</div>

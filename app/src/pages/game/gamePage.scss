@@ -1,0 +1,203 @@
+@import "~styles/variables.scss";
+
+game-page {
+  height: 100%;
+
+  .game-page {
+    height: 100%;
+
+    &.liver {
+      background: $liver-background-color;
+    }
+
+    &.pancreas {
+      background: $pancreas-background-color;
+    }
+
+    &.kidney {
+      background: $kidney-background-color;
+    }
+
+    &.stomach {
+      background: $stomach-background-color;
+    }
+
+    .fields-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      position: absolute;
+      top: 69px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      margin-top: -20px;
+
+      .game-field {
+        text-align: center;
+        color: #FFFFFF;
+
+        margin-bottom: 20px;
+
+        h2 {
+          text-transform: uppercase;
+          opacity: 0.2;
+          font-size: 24px;
+          margin: 0;
+
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .info-container {
+          display: flex;
+
+          .your-champion,
+          .opponent-champion {
+            flex: 1;
+            overflow: hidden;
+
+            .champion-name {
+              font-size: 12px;
+              text-transform: uppercase;
+              line-height: 29px;
+            }
+
+            .steps-count,
+            .steps-label {
+              font-size: 12px;
+            }
+
+            .champion-name,
+            .steps-count,
+            .steps-label {
+              padding: 0 20px;
+
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+
+        .champions-container {
+          display: flex;
+          margin-top: -14px;
+
+          .your-champion,
+          .opponent-champion {
+            flex: 1;  display: flex;
+
+            champion {
+              margin: auto;
+            }
+          }
+
+          @keyframes levitate-your {
+            0% {
+              transform: translateY(0);
+            }
+
+            50% {
+              transform: translateY(10px);
+            }
+
+            100% {
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes levitate-opponent {
+            0% {
+              transform: translateY(10px);
+            }
+
+            50% {
+              transform: translateY(0);
+            }
+
+            100% {
+              transform: translateY(10px);
+            }
+          }
+
+          .your-champion champion {
+            width: 50vw;
+            height: 50vw;
+
+            animation: levitate-your 4s ease-in-out infinite;
+          }
+
+          .opponent-champion champion {
+            width: 40vw;
+            height: 40vw;
+
+            animation: levitate-opponent 4s ease-in-out infinite;
+          }
+        }
+
+        .applied-actions-container {
+          display: flex;
+          flex-direction: row;
+
+          .your-champion,
+          .opponent-champion {
+            flex: 1;
+
+            applied-actions {
+              margin: 0 30px 10px;
+            }
+          }
+        }
+
+        .health-container {
+          display: flex;
+          flex-direction: row;
+
+          .your-champion,
+          .opponent-champion {
+            flex: 1;
+          }
+        }
+      }
+
+      .actions-field {
+        background: #EEEDE6;
+        text-align: center;
+
+        p {
+          font-size: 16px;
+
+          .available-steps {
+            color: $accent-color;
+          }
+        }
+
+        .actions-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+
+          padding-bottom: 25px;
+
+          > .action {
+            &:first-child,
+            &:last-child {
+              margin-top: 20px;
+            }
+
+            action {
+              .action-circle {
+                width: 20vw;
+                height: 20vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

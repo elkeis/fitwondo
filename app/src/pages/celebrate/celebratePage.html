@@ -1,0 +1,48 @@
+<div
+  class="celebrate-page won"
+  ng-class="$ctrl.profile.championId"
+  ng-if="$ctrl.won()">
+    <page-header hide-back="true"></page-header>
+    <div class="bubble">
+        <h2>well done</h2>
+
+        <p>You've won the game with terrific
+          <span class="bold">{{$ctrl.getTotalSteps()}}</span>
+          steps. {{::$ctrl.percentOfWorldPopulation}}% of world population are doing less.</p>
+
+        <champion champion-id="$ctrl.profile.championId"></champion>
+
+        <button
+                class="ff-button ok"
+                ng-click="$ctrl.ok()"
+                ng-disabled="$ctrl.disabled"
+        >
+            YAY
+        </button>
+    </div>
+</div>
+<div class="celebrate-page lost"
+  ng-class="$ctrl.profile.championId"
+  ng-if="!$ctrl.won()">
+  <page-header hide-back="true"></page-header>
+    <div class="bubble">
+        <h2>you're walked over!</h2>
+
+        <p>But no worries, you did
+          <span class="bold">{{$ctrl.getTotalSteps()}}</span>
+          steps during the game. {{::$ctrl.percentOfWorldPopulation}}% of world population are doing less.</p>
+
+        <champion
+          champion-id="$ctrl.profile.championId"
+          fucked-up="!$ctrl.won()"
+        ></champion>
+
+        <button
+                class="ff-button ok"
+                ng-click="$ctrl.ok()"
+                ng-disabled="$ctrl.disabled"
+        >
+            okay
+        </button>
+    </div>
+</div>

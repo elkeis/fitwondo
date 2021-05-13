@@ -1,0 +1,84 @@
+@import "~styles/variables.scss";
+
+.action-notification {
+    height: 100%;
+    width: 100%;
+    background-color: $default-background-color;
+    background: linear-gradient(to bottom, $default-background-color 0%,$default-background-color 50%,#ffffff 50%,#ffffff 100%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1;
+
+    >.action-effect {
+        $font-size: 8vh;
+
+        h1 {
+            font-weight: normal;
+            font-size: $font-size;
+            margin: 0;
+        }
+
+        p {
+            font-size: $font-size / 2;
+            margin: 0;
+        }
+        height: 20%;
+        overflow: hidden;
+        color: white;
+        padding: $font-size/2 $font-size/2 0 $font-size/2;
+
+        .heart {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            display: inline-block;
+            height: $font-size * .75;
+            width: $font-size * .75;
+            background-image: url("./images/heart.svg");
+        }
+    }
+
+    >.action-icon {
+        height: 35%;
+        >action-icon {
+            height: 100%;
+            width: 100%;
+            .action-icon {
+                background-size: auto 125%;
+            }
+        }
+    }
+
+    >.action-description {
+        $font-size: 6vh;
+        color: black;
+        height: 30%;
+        background: white;
+        padding: $font-size/2 $font-size/2 0 $font-size/2;
+
+        h1 {
+            font-weight: normal;
+            font-size: $font-size;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: $font-size / 2;
+            margin: 0;
+        }
+    }
+
+    >.footer {
+        height: 15%;
+    }
+}
+
+
+md-dialog {
+    &.notification {
+        height: 90%;
+        width: 90%;
+    }
+}

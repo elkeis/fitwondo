@@ -1,0 +1,42 @@
+.spinner-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  >.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    >img {
+      display: inline-block;
+      vertical-align: middle;
+      -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      animation: spinner-animation 1s infinite linear;
+    }
+  }
+
+  @-webkit-keyframes spinner-animation {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spinner-animation {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+}

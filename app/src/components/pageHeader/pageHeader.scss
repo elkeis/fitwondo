@@ -1,0 +1,24 @@
+@import "~styles/variables.scss";
+
+page-header {
+  display: block;
+  min-height: 70px;
+
+  .back-button {
+    border: none;
+    padding: 22px 14px;
+    background: transparent;
+  }
+
+  .add-steps {
+    border: none;
+    padding: 22px 14px;
+    background: transparent;
+    color: $default-text-color;
+
+    font-size: 36px;
+    line-height: 8px;
+
+    float: right;
+  }
+}

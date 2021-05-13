@@ -1,0 +1,28 @@
+<div class="action-wrapper" ng-class="{ready: $ctrl.isReady()}">
+    <div class="action-circle">
+        <div class="action-value">
+            <span ng-if="$ctrl.model.name.startsWith('heal')">
+                +{{$ctrl.model.value}} <img ng-src="{{ ::$ctrl.smallHeartUrl }}">
+            </span>
+            <span ng-if="$ctrl.model.name.startsWith('hit')">
+                -{{$ctrl.model.value}} <img ng-src="{{ ::$ctrl.smallHeartUrl }}">
+            </span>
+            <span ng-if="$ctrl.model.name.startsWith('slow')">
+                -{{$ctrl.model.value}} steps
+            </span>
+            <span ng-if="$ctrl.model.name.startsWith('shield')">
+                {{$ctrl.model.value}} hits
+            </span>
+        </div>
+        <action-icon type="$ctrl.model.name" large="true"></action-icon>
+        <!--<div class="icon">-->
+
+        <!--</div>-->
+    </div>
+
+    <div class="status-container">
+        <div class="ready-badge">Ready</div>
+        <action-progress value="$ctrl.value" total="$ctrl.model.cost"></action-progress>
+    </div>
+</div>
+

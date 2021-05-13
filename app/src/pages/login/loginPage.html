@@ -1,0 +1,34 @@
+<div class="form-container">
+  <header>
+    <h1>Fitnation</h1>
+  </header>
+  <p>
+    Start throwing fastfood out.<br/>
+    But login first...
+  </p>
+  <form class="login-form" ng-submit="$ctrl.onLogin({ username: $ctrl.username })">
+
+    <div class="use-material">
+      <md-input-container class="md-block" md-theme="fitnation-dark">
+        <label>Type your name</label>
+        <input ng-model="$ctrl.username" autocomplete="off">
+      </md-input-container>
+    </div>
+
+    <div class="login-button-container">
+      <button
+        type="submit"
+        class="ff-button"
+        ng-hide="$ctrl.showProcessing"
+        ng-disabled="!$ctrl.username"
+      >
+        Let me in
+      </button>
+      <spinner ng-show="$ctrl.showProcessing"></spinner>
+    </div>
+  </form>
+</div>
+
+<div class="fruits-container">
+  <img class="login-fruits" ng-src="{{ ::$ctrl.fruitsUrl }}">
+</div>

@@ -1,0 +1,7 @@
+<button
+    ng-hide="$ctrl.hideBack"
+    class="back-button"
+    ng-click="$ctrl.onBack()">
+  <img ng-src="{{ ::$ctrl.backButtonUrl }}"/>
+</button>
+<button ng-if="$ctrl.showAddSteps" class="add-steps" ng-click="$ctrl.onAddSteps()">+</button>

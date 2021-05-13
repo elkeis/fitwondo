@@ -1,0 +1,52 @@
+<div class="choose-champion-screen">
+  <page-header on-back="$ctrl.back()"></page-header>
+
+  <div class="screen-content">
+    <h2>
+      Choose your character
+    </h2>
+
+    <p>
+      Just tap one of those lovely guys below.
+    </p>
+  </div>
+</div>
+
+<div class="rect-container">
+  <div class="rect-row">
+    <div class="rect liver" ng-click="$ctrl.chooseChampion('liver')">
+      <div class="champion">
+        <div class="champion-name">
+          Mr. Liver
+        </div>
+        <champion champion-id="'liver'"></champion>
+      </div>
+    </div>
+    <div class="rect pancreas" ng-click="$ctrl.chooseChampion('pancreas')">
+      <div class="champion">
+        <div class="champion-name">
+          Mrs. Pancreas
+        </div>
+        <champion champion-id="'pancreas'"></champion>
+      </div>
+    </div>
+  </div>
+  <div class="rect-row">
+    <div class="rect kidney" ng-click="$ctrl.chooseChampion('kidney')">
+      <div class="champion">
+        <div class="champion-name">
+          Mr. Kidney
+        </div>
+        <champion champion-id="'kidney'"></champion>
+      </div>
+    </div>
+    <div class="rect stomach" ng-click="$ctrl.chooseChampion('stomach')">
+      <div class="champion">
+        <div class="champion-name">
+          Mrs. Stomach
+        </div>
+        <champion champion-id="'stomach'"></champion>
+      </div>
+    </div>
+  </div>
+</div>

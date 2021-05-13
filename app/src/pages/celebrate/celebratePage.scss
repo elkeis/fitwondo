@@ -1,0 +1,65 @@
+@import "~styles/variables.scss";
+
+celebrate-page {
+  display: block;
+  height: 100%;
+  color: #FFFFFF;
+
+  .celebrate-page {
+    height: 100%;
+
+    &.liver {
+      background-color: $liver-background-color;
+    }
+
+    &.pancreas {
+      background-color: $pancreas-background-color;
+
+    }
+
+    &.kidney {
+      background-color: $kidney-background-color;
+
+    }
+
+    &.stomach {
+      background-color: $stomach-background-color;
+    }
+
+    &.won {
+      background-image: url('./winner_halo.png');
+      background-position-x: 50%;
+      background-position-y: 50%;
+      background-size: 1000px 1000px;
+    }
+
+    .bubble {
+      text-align: center;
+      padding: 0 40px;
+
+      h2 {
+        margin-top: 0;
+        text-transform: uppercase;
+      }
+
+      span.bold {
+        font-weight: bold;
+      }
+
+      button.ok {
+        text-transform: uppercase;
+        padding: 0 50px;
+      }
+
+      > img {
+        width: 100%;
+      }
+
+      champion {
+        height: 87vw;
+        width: 74vw;
+        margin: 20px auto;
+      }
+    }
+  }
+}

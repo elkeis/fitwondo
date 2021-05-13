@@ -1,0 +1,8 @@
+body, html {
+  user-select: none;
+  background-color: #172F46;
+
+  *:focus {
+    outline: 0;
+  }
+}

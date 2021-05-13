@@ -1,0 +1,76 @@
+@import "~styles/variables.scss";
+
+choose-champion-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: hidden;
+  background: $default-background-color;
+  color: #FFFFFF;
+
+  .choose-champion-screen {
+
+    .screen-content {
+      text-align: center;
+
+      h2 {
+        margin-top: 0;
+        font-size: 6vw;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 4vw;
+      }
+    }
+  }
+
+  .rect-container {
+    .rect-row {
+      display: flex;
+      flex-direction: row;
+
+      .rect {
+        flex: 1;
+        height: 50vw;
+
+        &.liver {
+          background: $liver-background-color;
+        }
+
+        &.pancreas {
+          background: $pancreas-background-color;
+        }
+
+        &.kidney {
+          background: $kidney-background-color;
+        }
+
+        &.stomach {
+          background: $stomach-background-color;
+        }
+
+        .champion {
+          width: 100%;
+          height: 100%;
+
+          display: flex;
+          flex-direction: column;
+
+          .champion-name {
+            text-align: center;
+            color: #FFFFFF;
+            margin: 10px;
+            font-size: 4vw;
+          }
+
+          champion {
+            flex: 1;
+            margin: 0 10px 10px;
+          }
+        }
+      }
+    }
+  }
+}

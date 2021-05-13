@@ -1,0 +1,79 @@
+<div class="game-page" ng-class="$ctrl.getMyChampion().profile.championId">
+    <page-header
+        on-back="$ctrl.back()"
+        show-add-steps="$ctrl.env === 'browser'"
+        on-add-steps="$ctrl.add100()"
+    ></page-header>
+
+    <div class="fields-container">
+        <div class="game-field">
+            <h2>VS</h2>
+
+            <div class="info-container">
+                <div class="your-champion">
+                    <div class="champion-name">
+                        YOU
+                    </div>
+                </div>
+                <div class="opponent-champion">
+                    <div class="champion-name">
+                        {{ ::$ctrl.getOpponentChampion().profile.username }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-container">
+                <div class="your-champion">
+                </div>
+                <div class="opponent-champion">
+                    <div class="steps-count">
+                        {{ $ctrl.getOpponentChampion().steps }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="champions-container">
+                <div class="your-champion">
+                    <champion champion-id="$ctrl.getMyChampion().profile.championId"></champion>
+                </div>
+
+                <div class="opponent-champion">
+                    <champion champion-id="$ctrl.getOpponentChampion().profile.championId" mirror="true"></champion>
+                </div>
+            </div>
+            <div class="applied-actions-container">
+                <div class="your-champion">
+                    <applied-actions slow="$ctrl.getMyChampion().slow" shield="$ctrl.getMyChampion().shield"></applied-actions>
+                </div>
+
+                <div class="opponent-champion">
+                    <applied-actions slow="$ctrl.getOpponentChampion().slow" shield="$ctrl.getOpponentChampion().shield"></applied-actions>
+                </div>
+            </div>
+            <div class="health-container">
+                <div class="your-champion">
+                    <health-progress value="$ctrl.getMyChampion().health"></health-progress>
+                </div>
+                <div class="opponent-champion">
+                    <health-progress value="$ctrl.getOpponentChampion().health"></health-progress>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions-field">
+            <p>
+                Choose one from available stuff
+            </p>
+            <p>
+                Step balance:
+                <span class="available-steps">{{ $ctrl.getMyChampion().steps }}</span>
+            </p>
+
+            <div class="actions-container">
+                <div ng-repeat="action in $ctrl.getMyChampion().actions track by action.name" class="action">
+                    <action value="$ctrl.getMyChampion().steps" model="action" ng-click="$ctrl.performAction(action)"></action>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

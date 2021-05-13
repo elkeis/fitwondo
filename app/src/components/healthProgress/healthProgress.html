@@ -1,0 +1,9 @@
+<div class="progress-value">
+    {{ $ctrl.value }}
+</div>
+<div class="progress-indicator">
+    <img ng-src="{{ ::$ctrl.heartUrl }}" ng-class="{beating: $ctrl.startBeating()}">
+    <div class="meter">
+        <span ng-style="{ width: $ctrl.value + '%' }"></span>
+    </div>
+</div>

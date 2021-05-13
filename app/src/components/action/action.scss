@@ -1,0 +1,70 @@
+@import "~styles/variables.scss";
+
+action {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+
+  .action-circle {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 100%;
+    overflow: hidden;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: #D4D4CE;
+
+    transition: background-color 0.5s;
+
+    .action-value {
+      margin-top: 6px;
+      font-size: 10px;
+    }
+
+    action-icon {
+      flex: 1;
+    }
+  }
+
+  .ready-badge {
+    display: none;
+    font-size: 8px;
+    padding: 2px 5px;
+    border-radius: 2px;
+    background: $accent-color;
+    color: $default-text-color;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-50%);
+  }
+
+  .action-wrapper {
+    &.ready {
+      .action-circle {
+        background-color: #172F46;
+
+        .action-value {
+          color: $default-text-color;
+        }
+
+      }
+
+      .status-container {
+        height: 25px;
+
+        .ready-badge {
+          display: block;
+          width: 50px;
+        }
+
+        action-progress {
+          display: none;
+        }
+      }
+    }
+  }
+}

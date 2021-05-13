@@ -1,0 +1,95 @@
+action-icon {
+  display: flex;
+
+  .action-icon {
+    flex: 1;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.heal-1 {
+      background-image: url("./images/01 Remedy.png");
+      &[large] {
+        background-image: url("./images/01 Remedy@2x.png");
+      }
+    }
+
+    &.heal-2 {
+      background-image: url("./images/02 Remedy.png");
+      &[large] {
+        background-image: url("./images/02 Remedy@2x.png");
+      }
+    }
+
+    &.heal-3 {
+      background-image: url("./images/03 Remedy.png");
+      &[large] {
+        background-image: url("./images/03 Remedy@2x.png");
+      }
+    }
+
+    &.hit-1 {
+      background-image: url("./images/01 Attack.png");
+      &[large] {
+        background-image: url("./images/01 Attack@2x.png");
+      }
+    }
+
+    &.hit-2 {
+      background-image: url("./images/02 Attack.png");
+      &[large] {
+        background-image: url("./images/02 Attack@2x.png");
+      }
+    }
+
+    &.hit-3 {
+      background-image: url("./images/03 Attack.png");
+      &[large] {
+        background-image: url("./images/03 Attack@2x.png");
+      }
+    }
+
+    &.shield-1 {
+      background-image: url("./images/01 Shield.png");
+      &[large] {
+        background-image: url("./images/01 Shield@2x.png");
+      }
+    }
+
+    &.shield-2 {
+      background-image: url("./images/02 Shield.png");
+      &[large] {
+        background-image: url("./images/02 Shield@2x.png");
+      }
+    }
+
+    &.shield-3 {
+      background-image: url("./images/03 Shield.png");
+      &[large] {
+        background-image: url("./images/03 Shield@2x.png");
+      }
+    }
+
+    &.slow-1 {
+      background-image: url("./images/01 Clubs.png");
+      &[large] {
+        background-image: url("./images/01 Clubs@2x.png");
+      }
+    }
+
+    &.slow-2 {
+      background-image: url("./images/02 Clubs.png");
+      &[large] {
+        background-image: url("./images/02 Clubs@2x.png");
+      }
+    }
+
+    &.slow-3 {
+      background-image: url("./images/03 Clubs.png");
+      &[large] {
+        background-image: url("./images/03 Clubs@2x.png");
+      }
+    }
+  }
+}

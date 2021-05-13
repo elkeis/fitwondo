@@ -1,0 +1,75 @@
+champion {
+  display: block;
+  position: relative;
+
+  .champion-image {
+    //height: 100%;
+    //width: 100%;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-image: url("./undefined@2x.png");
+
+    &[fucked-up] {
+      background-position: 60% 10%, 50% 100%;
+      background-repeat: no-repeat, no-repeat;
+      background-size: 50%, contain;
+    }
+
+    &.liver {
+      background-image: url("./mrliver@2x.png");
+
+      &[mirror] {
+        background-image: url("./mrliverl@2x.png");
+      }
+
+      &[fucked-up] {
+        background-image: url("./fucked_up_layer@2x.png"), url("./mrliver@2x.png");
+      }
+    }
+
+    &.pancreas {
+      background-image: url("./mrspancreas@2x.png");
+
+      &[mirror] {
+        background-image: url("./mrspancreasl@2x.png");
+      }
+
+      &[fucked-up] {
+        background-image: url("./fucked_up_layer@2x.png"), url("./mrspancreas@2x.png");
+      }
+    }
+
+    &.kidney {
+      background-image: url("./mrkidney@2x.png");
+
+      &[mirror] {
+        background-image: url("./mrkidneyl@2x.png");
+      }
+
+      &[fucked-up] {
+        background-image: url("./fucked_up_layer@2x.png"), url("./mrkidney@2x.png");
+      }
+    }
+
+    &.stomach {
+      background-image: url("./mrsstomach@2x.png");
+
+      &[mirror] {
+        background-image: url("./mrsstomachl@2x.png");
+      }
+
+      &[fucked-up] {
+        background-image: url("./fucked_up_layer@2x.png"), url("./mrsstomach@2x.png");
+      }
+    }
+  }
+}

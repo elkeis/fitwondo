@@ -1,0 +1,54 @@
+<div ng-if="!$ctrl.session">
+    <login-page
+        on-login="$ctrl.login(username)"
+    ></login-page>
+</div>
+<div ng-if="$ctrl.session" ng-switch="$ctrl.session.getGame().state">
+
+    <choose-champion-page ng-switch-when="CHOOSE_CHAMPION"
+        on-choose-champion="$ctrl.chooseChampion(championId)"
+        disabled="$ctrl.disableChooseChampionPage"
+        on-back="$ctrl.logout()">
+    </choose-champion-page>
+
+    <start-game-page ng-switch-when="START_GAME"
+        on-start-game="$ctrl.startGame()"
+        profile="$ctrl.session.getMyProfile()"
+        disabled="$ctrl.disableStartGamePage"
+        on-back="$ctrl.resetChampion()">
+    </start-game-page>
+
+    <search-game-page ng-switch-when="SEARCHING_GAME"
+        profile="$ctrl.session.getMyProfile()"
+        disabled="$ctrl.disableSearchGamePage"
+        on-cancel="$ctrl.cancelSearch()">
+    </search-game-page>
+
+    <game-page ng-switch-when="IN_GAME"
+        profile="$ctrl.session.getMyProfile()"
+        game="$ctrl.session.getGame()"
+        disabled="$ctrl.disableGamePage"
+        on-back="$ctrl.concede()"
+        on-action="$ctrl.performAction(action)"
+        on-add-steps="$ctrl.addSteps(amount)"
+        on-game-start="$ctrl.startPedometer()"
+        on-game-end="$ctrl.stopPedometer()"
+        on-ack-notification="$ctrl.ackNotification()">
+    </game-page>
+
+    <celebrate-page ng-switch-when="CELEBRATE"
+        profile="$ctrl.session.getMyProfile()"
+        game="$ctrl.session.getGame()"
+        disabled="$ctrl.disableCelebrationPage"
+        on-ok="$ctrl.leaveGame()">
+    </celebrate-page>
+
+    <connection-lost-page ng-switch-when="CONNECTION_LOST"
+        on-reconnect="$ctrl.reload()"
+    ></connection-lost-page>
+
+    <div ng-show="$ctrl.reconnecting" class="offline">
+        <div class="offline-text">connecting...</div>
+        <spinner></spinner>
+    </div>
+</div>

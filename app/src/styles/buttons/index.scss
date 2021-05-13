@@ -1,0 +1,31 @@
+$default-button-color: #24CAC9;
+$default-button-active-color: #3FE3E1;
+$default-button-disabled-color: transparentize($default-button-active-color, 0.8);
+
+.ff-button {
+  border: none;
+  border-radius: 100px;
+  height: 48px;
+  color: #FFFFFF;
+  background: $default-button-color;
+  font-size: 16px;
+  padding: 0 20px;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active {
+    background: $default-button-active-color;
+  }
+
+  &:disabled {
+    cursor: default;
+    background: $default-button-disabled-color;
+  }
+}

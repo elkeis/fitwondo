@@ -1,0 +1,6 @@
+<div class="meter">
+    <span ng-style="{ width: $ctrl.getPercentage() + '%' }"></span>
+</div>
+<div class="details">
+    <span class="percentage">{{ $ctrl.getPercentage() | number:0 }}%</span> of {{ $ctrl.total }}
+</div>

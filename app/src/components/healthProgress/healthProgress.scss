@@ -1,0 +1,70 @@
+health-progress {
+  display: flex;
+  justify-content: center;
+
+  .progress-value {
+    display: inline-block;
+    width: 30px;
+  }
+
+  .progress-indicator {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+
+    > img {
+      position: absolute;
+      left: 0;
+
+      &.beating {
+        animation: heartbeat 1s infinite;
+      }
+    }
+
+    .meter {
+      height: 6px;
+      width: 60px;
+      background: #FFFFFF;
+      border-radius: 100px;
+      padding: 2px;
+      margin: 6px;
+
+      > span {
+        display: block;
+        height: 100%;
+        background-color: #DE5950;
+        border-radius: 100px;
+
+        transition: width 0.5s;
+      }
+    }
+  }
+
+  @keyframes heartbeat
+  {
+    0%
+    {
+      transform: scale( .75 );
+    }
+    20%
+    {
+      transform: scale( 1 );
+    }
+    40%
+    {
+      transform: scale( .75 );
+    }
+    60%
+    {
+      transform: scale( 1 );
+    }
+    80%
+    {
+      transform: scale( .75 );
+    }
+    100%
+    {
+      transform: scale( .75 );
+    }
+  }
+}

@@ -1,0 +1,22 @@
+applied-actions {
+  display: flex;
+  justify-content: center;
+  height: 25px;
+
+  .applied-action {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+
+    action-icon {
+      width: 25px;
+      height: 25px;
+    }
+
+    .action-value {
+      font-size: 12px;
+      line-height: 25px;
+    }
+  }
+}

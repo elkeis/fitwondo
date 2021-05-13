@@ -1,0 +1,28 @@
+@import "~styles/variables.scss";
+
+action-progress {
+  display: block;
+  overflow: hidden;
+
+  .meter {
+    height: 3px;
+    width: 50px;
+    background-color: transparentize(#172F46, 0.8);
+    overflow: hidden;
+    margin: 5px auto;
+
+    > span {
+      display: block;
+      height: 100%;
+      background-color: $accent-color;
+    }
+  }
+
+  .details {
+    font-size: 10px;
+
+    .percentage {
+      color: $accent-color;
+    }
+  }
+}

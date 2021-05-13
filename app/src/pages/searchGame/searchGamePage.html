@@ -1,0 +1,26 @@
+<div class="search-game-page">
+    <page-header on-back="$ctrl.cancel()"></page-header>
+
+    <div class="page-content">
+        <div class="content-group">
+            <h2>
+                Looking for your rival
+            </h2>
+
+            <p>
+                He's gonna be somewhere near... We guess.
+            </p>
+        </div>
+
+        <div class="content-group">
+            <spinner></spinner>
+        </div>
+
+        <div class="content-group">
+            <div class="champions-container">
+                <champion champion-id="$ctrl.profile.championId"></champion>
+                <champion></champion>
+            </div>
+        </div>
+    </div>
+</div>

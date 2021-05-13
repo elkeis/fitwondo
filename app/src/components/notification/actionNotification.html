@@ -1,0 +1,56 @@
+<md-dialog class="notification">
+    <div class='action-notification' ng-cloak>
+
+<!-- HEAD WITH VALUE -->
+        <div class="action-effect" ng-if="$ctrl.actionType === 'hit'">
+            <h1>-{{$ctrl.action.value}} <i class="heart"></i></h1>
+        </div>
+
+        <div class="action-effect" ng-if="$ctrl.actionType === 'slow'">
+            <h1>Next {{$ctrl.action.value}}</h1>
+            <p>steps</p>
+        </div>
+
+        <div class="action-effect" ng-if="$ctrl.actionType === 'heal'">
+            <h1>+{{$ctrl.action.value}} <i class="heart"></i></h1>
+        </div>
+
+        <div class="action-effect" ng-if="$ctrl.actionType === 'shield'">
+            <h1>+{{$ctrl.action.value}} <i class="heart"></i></h1>
+        </div>
+
+
+<!-- ICOOOOOONNNNN -->
+
+        <div class="action-icon">
+            <action-icon type="$ctrl.action.name" large="true"></action-icon>
+        </div>
+
+<!-- CONTENT WITH DIFFERENT SH*T -->
+
+        <div class="action-description" ng-if="$ctrl.actionType === 'hit'">
+            <h1>hit</h1>
+            <p>Your avatar health decreased by {{$ctrl.action.value}} points. Do something.</p>
+        </div>
+
+        <div class="action-description" ng-if="$ctrl.actionType === 'slow'">
+            <h1>slower</h1>
+            <p>You have to walk more or faster right now to be effective.</p>
+        </div>
+
+        <div class="action-description" ng-if="$ctrl.actionType === 'heal'">
+            <h1>healed</h1>
+            <p>Your opponent is more healthy right now. By {{$ctrl.action.value}} points</p>
+        </div>
+
+        <div class="action-description" ng-if="$ctrl.actionType === 'shield'">
+            <h1>shield</h1>
+            <p>Your opponent is under protection. He just applied {{$ctrl.action.value}} point shield.</p>
+        </div>
+
+<!-- OK BUTTON -->
+        <div class="footer">
+            <button  class="ff-button" ng-click="$ctrl.close()">got it</button>
+        </div>
+    </div>
+</md-dialog>
